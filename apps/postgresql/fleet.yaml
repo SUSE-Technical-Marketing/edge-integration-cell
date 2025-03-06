@@ -1,0 +1,12 @@
+defaultNamespace: postgresql
+helm:
+  chart: oci://dp.apps.rancher.io/charts/postgresql
+  releaseName: postgresql
+  valuesFiles:
+    - values.yaml
+labels:
+  app: postgresql
+overrideTargets:
+  - clusterSelector:
+      matchLabels:
+        app: edge-integration-cell

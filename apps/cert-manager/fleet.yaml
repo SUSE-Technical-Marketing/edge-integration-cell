@@ -1,0 +1,15 @@
+defaultNamespace: cert-manager
+helm:
+  chart: oci://dp.apps.rancher.io/charts/cert-manager
+  releaseName: cert-manager
+  values:
+    global:
+      imagePullSecrets: ["application-collection"]
+    crds:
+      enabled: true
+labels:
+  app: cert-manager
+dependsOn:
+  - selector:
+      matchLabels:
+        app: edge-integration-cell
