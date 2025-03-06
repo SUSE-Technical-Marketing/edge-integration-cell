@@ -9,7 +9,7 @@ helm:
       enabled: true
 labels:
   app: cert-manager
-dependsOn:
-  - selector:
+overrideTargets:
+  - clusterSelector:
       matchLabels:
         app: edge-integration-cell

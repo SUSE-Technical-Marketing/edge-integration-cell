@@ -7,7 +7,7 @@ helm:
       imagePullSecrets: ["application-collection"]
 labels:
   app: redis
-dependsOn:
-  - selector:
+overrideTargets:
+  - clusterSelector:
       matchLabels:
         app: edge-integration-cell
