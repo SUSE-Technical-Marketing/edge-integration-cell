@@ -11,3 +11,11 @@ overrideTargets:
   - clusterSelector:
       matchLabels:
         app: edge-integration-cell
+diff:
+  comparePatches:
+    - apiVersion: apps/v1
+      kind: StatefulSet
+      name: redis
+      namespace: redis
+      operations:
+        - { op: "remove", path: "/spec/template/spec/containers/0"}
